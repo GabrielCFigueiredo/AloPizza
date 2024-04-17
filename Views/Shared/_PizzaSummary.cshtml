@@ -1,0 +1,8 @@
+@using AloPizza.Models
+@model Pizza
+
+<div class="col-sm-4 col-md-3 col-lg-4">
+    <h4>@Model.Name</h4>
+    <p><img src="@Model.ImageUrl" alt=""></p>
+    <h3>Preço: @Model.Price.ToString("c")</h3>
+</div>
