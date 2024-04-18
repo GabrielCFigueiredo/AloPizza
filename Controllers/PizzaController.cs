@@ -25,21 +25,20 @@ namespace alo_pizza.Controllers
             currentCategory = "Todas as Pizzas";
         }else
         {
-            if (string.Equals("salt", category, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals("Sal", category, StringComparison.OrdinalIgnoreCase))
             {
                 pizzas = _pizzaRepository.Pizzas
-                .Where(l => l.Category.CategoryName.Equals("salt"))
+                .Where(l => l.Category.CategoryName.Equals("Sal"))
                 .OrderBy(l => l.Name);
-            }
-            if (string.Equals("sweet", category, StringComparison.OrdinalIgnoreCase))
+            }else if (string.Equals("Doce", category, StringComparison.OrdinalIgnoreCase))
             {
                 pizzas = _pizzaRepository.Pizzas
-                .Where(l => l.Category.CategoryName.Equals("sweet"))
+                .Where(l => l.Category.CategoryName.Equals("Doce"))
                 .OrderBy(l => l.Name);
             }else
             {
                pizzas = _pizzaRepository.Pizzas
-                .Where(l => l.Category.CategoryName.Equals("Special"))
+                .Where(l => l.Category.CategoryName.Equals("Especial"))
                 .OrderBy(l => l.Name); 
             }
 
