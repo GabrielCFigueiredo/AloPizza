@@ -5,4 +5,15 @@
     <h4>@Model.Name</h4>
     <p><img src="@Model.ImageUrl" alt=""></p>
     <h3>Preço: @Model.Price.ToString("c")</h3>
+    <a asp-controller="Pizza" asp-action="Details" asp-route-pizzaId="@Model.PizzaId">@Model.Name</a>
+
+    <p>@Model.ShortDescription</p>
+    <div>
+        <p class="button">
+            <a class="btn btn-primary" id="cartButton" asp-controller="ShoppingCart"
+            asp-action="AddItemToShoppingCart" asp-route-PizzaId="@Model.PizzaId">
+            Incluir no Carrinho
+            </a>
+        </p>
+    </div>
 </div>

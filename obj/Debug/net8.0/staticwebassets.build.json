@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "If6Va+fWjgV98uU2DhxcTwnwvmVoWwX9UFaUUz+EUaY=",
+  "Hash": "GDGphUd3dlrEdl5fF0y5u/vahVRODHX58HXvrQaC9Mw=",
   "Source": "AloPizza",
   "BasePath": "_content/AloPizza",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/cart-5-16.ico"
+    },
+    {
+      "Identity": "/home/gabriel/AloPizza/wwwroot/images/delete.png",
+      "SourceId": "AloPizza",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/gabriel/AloPizza/wwwroot/",
+      "BasePath": "_content/AloPizza",
+      "RelativePath": "images/delete.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/delete.png"
     },
     {
       "Identity": "/home/gabriel/AloPizza/wwwroot/images/Envelope-icon24.png",

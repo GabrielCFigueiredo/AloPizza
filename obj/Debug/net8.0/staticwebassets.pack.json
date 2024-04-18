@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets/images/cart-5-16.ico"
     },
     {
+      "Id": "/home/gabriel/AloPizza/wwwroot/images/delete.png",
+      "PackagePath": "staticwebassets/images/delete.png"
+    },
+    {
       "Id": "/home/gabriel/AloPizza/wwwroot/images/faleconosco1.jpg",
       "PackagePath": "staticwebassets/images/faleconosco1.jpg"
     },

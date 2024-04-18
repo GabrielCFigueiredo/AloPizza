@@ -25,22 +25,9 @@ namespace alo_pizza.Controllers
             currentCategory = "Todas as Pizzas";
         }else
         {
-            if (string.Equals("Sal", category, StringComparison.OrdinalIgnoreCase))
-            {
-                pizzas = _pizzaRepository.Pizzas
-                .Where(l => l.Category.CategoryName.Equals("Sal"))
-                .OrderBy(l => l.Name);
-            }else if (string.Equals("Doce", category, StringComparison.OrdinalIgnoreCase))
-            {
-                pizzas = _pizzaRepository.Pizzas
-                .Where(l => l.Category.CategoryName.Equals("Doce"))
-                .OrderBy(l => l.Name);
-            }else
-            {
-               pizzas = _pizzaRepository.Pizzas
-                .Where(l => l.Category.CategoryName.Equals("Especial"))
-                .OrderBy(l => l.Name); 
-            }
+
+            pizzas = _pizzaRepository.Pizzas.Where(l => l.Category.CategoryName.Equals(category))
+            .OrderBy(c => c.Name);
 
             currentCategory = category;
             
@@ -53,6 +40,12 @@ namespace alo_pizza.Controllers
         };
 
         return View(pizzaListViewModel);
+    }
+
+    public IActionResult Details(int pizzaId)
+    {
+        var pizza = _pizzaRepository.Pizzas.FirstOrDefault(l => l.PizzaId == pizzaId);
+        return View(pizza);
     }
    } 
 }
