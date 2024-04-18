@@ -4,6 +4,7 @@ using AloPizza.Repositories.Interface;
 using AloPizza.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,17 @@ app.UseRouting();
 app.UseSession();
 
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints => 
+{
+    endpoints.MapControllerRoute(
+        name: "filterCategory",
+        pattern: "Pizza/{action}/{category?}",
+        defaults: new { Controller = "Pizza", action = "List" });
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 
 app.MapControllerRoute(
     name: "default",
