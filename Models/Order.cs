@@ -14,18 +14,16 @@ namespace AloPizza.Models
         public string Name { get; set; }
 
         [StringLength(50)]
-
+        [Required(ErrorMessage = "Informe o Sobrenome")]
         public string SurName { get; set; }
 
         [Required(ErrorMessage = "Informe o seu Enderço")]
         [StringLength(100)]
         [Display(Name = "Address")]
-
         public string Address { get; set; }
 
         [StringLength(100)]
         [Display(Name = "Complement")]
-
         public string Complement { get; set; }
 
         [Required(ErrorMessage = "Informe o seu CEP")]
@@ -35,11 +33,9 @@ namespace AloPizza.Models
         public string ZipCode { get; set; }
 
         [StringLength(10)]
-
         public string State { get; set; }
 
         [StringLength(50)]
-
         public string City { get; set; }
 
         [Required(ErrorMessage = "Informe o seu telefone")]
