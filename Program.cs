@@ -20,6 +20,7 @@ builder.Services.AddSession();
 
 builder.Services.AddTransient<IPizzaRepository, PizzaRepository>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped(sp => ShoppingCart.GetShopping(sp));
 
