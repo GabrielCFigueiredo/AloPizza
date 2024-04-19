@@ -1,5 +1,6 @@
 using AloPizza.Models;
 using Microsoft.EntityFrameworkCore;
+using Name;
 
 namespace AloPizza.Context
 {
@@ -15,5 +16,9 @@ namespace AloPizza.Context
         public DbSet<Pizza> Pizzas {get; set; }
         public DbSet<CartPurchaseItem> CartShoppingItems { get; set; }
         public object CartPurchaseItems { get; internal set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }
