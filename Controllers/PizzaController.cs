@@ -47,5 +47,34 @@ namespace alo_pizza.Controllers
         var pizza = _pizzaRepository.Pizzas.FirstOrDefault(l => l.PizzaId == pizzaId);
         return View(pizza);
     }
+
+    public ViewResult Search(string searchString)
+    {
+        IEnumerable<Pizza> pizzas;
+        string currentCategory = string.Empty;
+
+        if (string.IsNullOrEmpty(searchString))
+        {
+            pizzas = _pizzaRepository.Pizzas.OrderBy(p => p.PizzaId);
+            currentCategory = "Todas as Pizzas";
+        }else
+        {
+            pizzas = _pizzaRepository.Pizzas
+            .Where(p => p.Name.ToLower().Contains(searchString.ToLower()));
+
+            if (pizzas.Any())
+            {
+                currentCategory = "Pizzas";
+            }else
+            {
+                currentCategory = "Nenhum Produto foi encontrado";
+            }
+        }
+            return View("~/Views/Pizza/List.cshtml", new PizzaListViewModels
+            {
+                Pizzas = pizzas,
+                CurrentCategory = currentCategory
+            });
+    }
    } 
 }

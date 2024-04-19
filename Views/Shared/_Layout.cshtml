@@ -24,6 +24,11 @@
                     @await Component.InvokeAsync("MenuCategory")
                     <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     <a class="nav-link text-light" asp-area="" asp-controller="Contact" asp-action="Index">Contato</a>
+                    <form class="navbar-form mavbar-right" asp-controller="Pizza" asp-action="Search" method="get" >
+                        <div class="form-group">
+                            <input type="text" class="from-control" placeholder="Procurar Produto" name="searchString" value="@ViewData["searchString"]">
+                        </div>
+                    </form>
                 </div>
             </div>
         </nav>
